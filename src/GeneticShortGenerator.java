@@ -158,7 +158,7 @@ public class GeneticShortGenerator {
             String child = crossover(parent1, parent2);
 
             int mutationProbability = ThreadLocalRandom.current().nextInt(100);
-            if(mutationProbability <= 50){
+            if(mutationProbability <= 20){
                 child = mutation(child);
             }
             children.add(child);
@@ -207,6 +207,10 @@ public class GeneticShortGenerator {
             answers[i] = Integer.parseInt(ans.get(i), 2);
         }
 
+        for (int ind:
+                answers) {
+            System.out.print(String.format("0x%1$04X ", ind));
+        }
         return answers;
     }
 
